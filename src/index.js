@@ -4,6 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import Amplify from "aws-amplify";
+import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
+
+import { withAuthenticator } from '@aws-amplify/ui-react'
+
+...
+
+export default withAuthenticator(App)
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
